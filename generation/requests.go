@@ -1,11 +1,12 @@
 package generation
 
 import (
-	"advent-of-go/utils"
 	"fmt"
 	"io"
 	"net/http"
 	"time"
+
+	"advent-of-go/utils"
 )
 
 func prepareRequest(method string, url string, body io.Reader, isForm bool) (*http.Response, error) {

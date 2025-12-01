@@ -1,10 +1,11 @@
 package generation
 
 import (
-	"advent-of-go/utils"
 	"bytes"
 	"fmt"
 	"net/http"
+
+	"advent-of-go/utils"
 )
 
 func Submit(year, day, part int, solution utils.Solution) (string, error) {

@@ -1,7 +1,6 @@
 package generation
 
 import (
-	"advent-of-go/utils"
 	"fmt"
 	"go/ast"
 	"go/parser"
@@ -9,10 +8,14 @@ import (
 	"go/token"
 	"html/template"
 	"os"
+
+	"advent-of-go/utils"
 )
 
-var fileTemplate = utils.Unpack(template.ParseFiles("generation/solution_template.txt"))
-var registryTemplate = utils.Unpack(template.ParseFiles("generation/registry_template.txt"))
+var (
+	fileTemplate     = utils.Unpack(template.ParseFiles("generation/solution_template.txt"))
+	registryTemplate = utils.Unpack(template.ParseFiles("generation/registry_template.txt"))
+)
 
 func Generate(year, day int) error {
 	yearDirExists, e := doesYearDirExist(year)
@@ -163,7 +166,7 @@ func createSolutions(year, day int) error {
 	} else if !os.IsNotExist(e) {
 		return fmt.Errorf("error checking if solution directory exists: %w", e)
 	}
-	if e := os.MkdirAll(dirName, 0777); e != nil {
+	if e := os.MkdirAll(dirName, 0o777); e != nil {
 		return fmt.Errorf("error creating solutions directory: %w", e)
 	}
 	if e := createSolutionFile(year, day, 1); e != nil {

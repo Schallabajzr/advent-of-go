@@ -1,12 +1,13 @@
 package generation
 
 import (
-	"advent-of-go/utils"
 	"bytes"
 	"fmt"
 	"io"
 	"net/http"
 	"os"
+
+	"advent-of-go/utils"
 )
 
 func AllInput(solutions []utils.Solution) bool {
@@ -51,7 +52,7 @@ func input(year, day int) error {
 	body = bytes.TrimSpace(body)
 
 	dirName := fmt.Sprintf("private/inputs/%d", year)
-	if e := os.MkdirAll(dirName, 0777); e != nil {
+	if e := os.MkdirAll(dirName, 0o777); e != nil {
 		return fmt.Errorf("error creating directory: %w", e)
 	}
 	inputFile, e := os.Create(fmt.Sprintf("%s/day%d.txt", dirName, day))

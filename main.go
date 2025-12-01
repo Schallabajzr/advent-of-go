@@ -1,12 +1,13 @@
 package main
 
 import (
-	"advent-of-go/generation"
-	"advent-of-go/solutions"
-	"advent-of-go/utils"
 	"flag"
 	"fmt"
 	"time"
+
+	"advent-of-go/generation"
+	"advent-of-go/solutions"
+	"advent-of-go/utils"
 )
 
 func main() {

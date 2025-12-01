@@ -15,7 +15,7 @@ func runInit() error {
 	if !os.IsNotExist(e) {
 		return fmt.Errorf("error getting information about the private directory: %w", e)
 	}
-	if e := os.Mkdir("private", 0700); e != nil {
+	if e := os.Mkdir("private", 0o700); e != nil {
 		return fmt.Errorf("error creating private directory: %w", e)
 	}
 	if e := initCookie(); e != nil {

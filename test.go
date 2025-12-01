@@ -1,10 +1,11 @@
 package main
 
 import (
-	"advent-of-go/utils"
 	"encoding/json"
 	"fmt"
 	"os"
+
+	"advent-of-go/utils"
 )
 
 type testResult struct {

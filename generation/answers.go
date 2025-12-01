@@ -1,15 +1,15 @@
 package generation
 
 import (
-	"advent-of-go/utils"
 	"encoding/json"
 	"fmt"
 	"net/http"
 	"os"
+
+	"advent-of-go/utils"
 )
 
 func AllAnswers(solutions []utils.Solution) (bool, error) {
-
 	var answersInFile map[string]map[string][]string
 	if e := json.Unmarshal(utils.Unpack(os.ReadFile("private/answers.json")), &answersInFile); e != nil {
 		return false, fmt.Errorf("error unmarshaling answers file: %w", e)
