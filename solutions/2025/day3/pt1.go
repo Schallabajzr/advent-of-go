@@ -1,10 +1,11 @@
 package day3
 
 import (
-	"advent-of-go/utils"
 	"fmt"
 	"strconv"
 	"strings"
+
+	"advent-of-go/utils"
 )
 
 func Pt1() utils.Solution {

@@ -1,9 +1,10 @@
 package day4
 
 import (
-	"advent-of-go/utils"
 	"fmt"
 	"strings"
+
+	"advent-of-go/utils"
 )
 
 func Pt1() utils.Solution {
@@ -25,9 +26,14 @@ func pt1(input string) (string, error) {
 
 	count := 0
 	dirs := []struct{ dx, dy int }{
-		{-1, -1}, {0, -1}, {1, -1},
-		{-1, 0}, {1, 0},
-		{-1, 1}, {0, 1}, {1, 1},
+		{-1, -1},
+		{0, -1},
+		{1, -1},
+		{-1, 0},
+		{1, 0},
+		{-1, 1},
+		{0, 1},
+		{1, 1},
 	}
 
 	for y := 0; y < len(grid); y++ {

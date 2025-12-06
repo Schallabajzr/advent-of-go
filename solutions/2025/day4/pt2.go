@@ -1,9 +1,10 @@
 package day4
 
 import (
-	"advent-of-go/utils"
 	"fmt"
 	"strings"
+
+	"advent-of-go/utils"
 )
 
 func Pt2() utils.Solution {
@@ -24,9 +25,14 @@ func pt2(input string) (string, error) {
 	}
 
 	dirs := []struct{ dx, dy int }{
-		{-1, -1}, {0, -1}, {1, -1},
-		{-1, 0}, {1, 0},
-		{-1, 1}, {0, 1}, {1, 1},
+		{-1, -1},
+		{0, -1},
+		{1, -1},
+		{-1, 0},
+		{1, 0},
+		{-1, 1},
+		{0, 1},
+		{1, 1},
 	}
 
 	result := 0
