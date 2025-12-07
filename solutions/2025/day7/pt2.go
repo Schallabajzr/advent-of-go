@@ -61,7 +61,7 @@ func pt2(input string) (string, error) {
 			}
 		}
 
-		printCounts(counts)
+		printCountsWithSplits(grid, counts)
 	}
 
 	return fmt.Sprintf("%d", sumLastRow(counts)), nil
@@ -75,20 +75,29 @@ func sumLastRow(counts [][]int) int {
 	return sum
 }
 
-func printCounts(counts [][]int) {
+func printCountsWithSplits(grid [][]rune, counts [][]int) {
 	var b strings.Builder
 
-	for i := 0; i < len(counts); i++ {
-		for j := 0; j < len(counts[i]); j++ {
+	for i := 0; i < len(grid); i++ {
+		for j := 0; j < len(grid[i]); j++ {
+
+			// always show splitters
+			if grid[i][j] == '^' {
+				b.WriteString(" ^")
+				continue
+			}
+
+			// show dot for empty cells
 			if counts[i][j] == 0 {
 				b.WriteString(" .")
-			} else {
-				fmt.Fprintf(&b, "%2d", counts[i][j])
+				continue
 			}
+
+			// show number
+			fmt.Fprintf(&b, "%2d", counts[i][j])
 		}
 		b.WriteByte('\n')
 	}
 
 	fmt.Print(b.String())
-	fmt.Println()
 }
