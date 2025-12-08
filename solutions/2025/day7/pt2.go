@@ -61,7 +61,7 @@ func pt2(input string) (string, error) {
 			}
 		}
 
-		printCountsWithSplits(grid, counts)
+		//printCountsWithSplits(grid, counts)
 	}
 
 	return fmt.Sprintf("%d", sumLastRow(counts)), nil
