@@ -37,7 +37,7 @@ func pt1(input string) (string, error) {
 				grid[i][j] = '|'
 			}
 		}
-		//printMatrixWide(grid)
+		// printMatrixWide(grid)
 	}
 
 	return fmt.Sprintf("%d", result), nil
